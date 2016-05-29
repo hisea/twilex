@@ -3,18 +3,20 @@ defmodule Twilex.Messenger do
 
 
   def create(from, to, body, media \\ "") do
-    sid = Application.get_env(:twilex, :sid)
-    token = Application.get_env(:twilex, :token)
-    hackney = [basic_auth: {sid, token}]
-
     {:ok, response} = HTTPoison.post(
       request_url,
       {:form, ["From": from, "To": to, "Body": body, "Media": media]},
       [],
-      [hackney: hackney])
+      auth_key)
 
     response.body
     |> process_response_body
+  end
+
+  def auth_key do
+    sid = Application.get_env(:twilex, :sid)
+    token = Application.get_env(:twilex, :token)
+    [basic_auth: {sid, token}]
   end
 
   def request_url do
