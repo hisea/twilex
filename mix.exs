@@ -5,8 +5,10 @@ defmodule Twilex.Mixfile do
     [app: :twilex,
      version: "0.0.1",
      elixir: "~> 1.2",
+     description: "A Twilio client for elixir."
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     package: package,
      deps: deps]
   end
 
@@ -30,5 +32,11 @@ defmodule Twilex.Mixfile do
   defp deps do
     [{:httpoison, "~> 0.8.0"},
      {:poison, "~> 2.0"}]
+  end
+
+  defp package do
+    [licenses: ["MIT"],
+     maintainers: ["Yinghai Zhao"],
+     links: %{"GitHub" => "https://github.com/hisea/twilex"}]
   end
 end
