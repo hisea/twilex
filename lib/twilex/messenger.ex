@@ -7,7 +7,7 @@ defmodule Twilex.Messenger do
       request_url,
       {:form, ["From": from, "To": to, "Body": body, "Media": media]},
       [],
-      auth_key)
+      [ hackney: auth_key ])
 
     response.body
     |> process_response_body
