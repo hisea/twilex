@@ -35,5 +35,5 @@ config :twilex,
  
  i.e.
  
- iex(1)> Twilex.Messenger.create(15005550006, 15005550001, "test text")
+ iex(1)> Twilex.Messenger.create("15005550006", "15005550001", "test text")
 ```
