@@ -29,3 +29,7 @@ use Mix.Config
 # here (which is why it is important to import them last).
 #
 #     import_config "#{Mix.env}.exs"
+
+config :twilex,
+  sid: System.get_env("TWILIO_SID"),
+  token: System.get_env("TWILIO_TOKEN")
