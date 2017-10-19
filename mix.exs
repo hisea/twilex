@@ -3,8 +3,8 @@ defmodule Twilex.Mixfile do
 
   def project do
     [app: :twilex,
-     version: "0.0.2",
-     elixir: "~> 1.2",
+     version: "0.1.0",
+     elixir: "~> 1.5",
      description: "A Twilio client for elixir.",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
@@ -30,8 +30,8 @@ defmodule Twilex.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    [{:httpoison, "~> 0.8.0"},
-     {:poison, "~> 2.0"}]
+    [{:httpoison, "~> 0.13"},
+     {:poison, "~> 3.1"}]
   end
 
   defp package do
